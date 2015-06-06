@@ -1,5 +1,7 @@
 # liveplant.io
 
+Liveplant is an experiment where we put the life of a plant in the hands of the internet.
+
 ### To Install:
 
 **Requires io.js 2+**
@@ -13,6 +15,8 @@ bower install
 seeds serve
 ```
 
+### Relevant Links
+
 Visit [http://localhost:4200](http://localhost:4200)
 
 [Seeds Docs](http://docs.seedsjs.com)
@@ -20,3 +24,6 @@ Visit [http://localhost:4200](http://localhost:4200)
 [Seeds Repo](http://github.com/terminalvelocity/seeds.js)
 
 [Seeds Gitter](http://gitter.im/terminalvelocity/seeds.js)
+
+[CI Status](http://ci.brat.io/projects/13)
+
