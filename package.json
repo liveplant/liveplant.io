@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "mocha test/",
-    "lint": "eslint -c .eslintrc lib/",
+    "lint": "eslint -c .eslintrc",
     "lint-staged": "git diff --diff-filter=ACMRTUXB --cached --name-only | grep '.*\\.js$' | grep -v 'node_modules' | grep -v 'test' | xargs eslint -c .eslintrc --ext .js --ext .js",
     "doctoc": "doctoc README.md --title '**LivePlant.io**' && if [ -f CONTRIBUTING.md ]; then doctoc CONTRIBUTING.md; fi && if [[ $(git diff --shortstat -- README.md 2> /dev/null | tail -n1) != '' || $(git diff --shortstat -- CONTRIBUTING.md 2> /dev/null | tail -n1) != '' ]]; then git add README.md CONTRIBUTING.md && git commit --no-verify -m'table of contents update'; fi",
     "requireGitClean": "/bin/bash -c 'source ./scripts.sh && git_require_clean_work_tree'",
