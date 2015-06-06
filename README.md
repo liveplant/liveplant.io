@@ -1,6 +1,10 @@
 # liveplant.io
 
-To Install:
+### To Install:
+
+**Requires io.js 2+**
+
+***or you can transpile to ES5 with Babel to use the cli tool with node.js... io.js is probably better***
 
 ```
 npm i -g seeds
