@@ -23,7 +23,6 @@ Visit [http://localhost:4200](http://localhost:4200)
 
 [Seeds Repo](http://github.com/terminalvelocity/seeds.js)
 
-[Seeds Gitter](http://gitter.im/terminalvelocity/seeds.js)
+[Seeds Chat](http://gitter.im/terminalvelocity/seeds.js)
 
 [CI Status](http://ci.brat.io/projects/13)
-
