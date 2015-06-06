@@ -1,3 +1,7 @@
+# liveplant.io
+
+Liveplant is an experiment where we put the life of a plant in the hands of the internet.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **LivePlant.io**
@@ -7,10 +11,6 @@
     - [Relevant Links](#relevant-links)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# liveplant.io
-
-Liveplant is an experiment where we put the life of a plant in the hands of the internet.
 
 ### To Install:
 
