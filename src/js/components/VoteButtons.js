@@ -20,7 +20,7 @@ class VoteButtons extends React.Component {
         <button type="button"
                 key={key}
                 onClick={this.vote.bind(this, option.name)}
-                className="btn btn-default btn-block">{option.displayName}</button>
+                className="btn btn-default btn-lg btn-block">{option.displayName}</button>
       );
     });
     return (
