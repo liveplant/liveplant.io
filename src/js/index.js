@@ -1,6 +1,8 @@
 var $ = require('jquery');
 var _ = require('lodash');
 var Vote = require('./models/Action');
+import React from 'react';
+import VoteButtons from './components/VoteButtons';
 
 class Liveplant {
   constructor(options) {
@@ -27,3 +29,8 @@ class Liveplant {
 }
 
 var liveplant = Liveplant.init();
+
+React.render(
+  <VoteButtons />,
+  document.getElementById('vote-buttons')
+);

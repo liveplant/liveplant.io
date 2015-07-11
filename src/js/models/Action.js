@@ -1,4 +1,4 @@
-class Action {
+
   constructor() {
     this.count = 0;
     this.name = '';
