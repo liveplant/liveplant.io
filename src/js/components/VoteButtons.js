@@ -15,9 +15,10 @@ class VoteButtons extends React.Component {
   }
 
   render() {
-    var buttons = this.state.actions.map((option) => {
+    var buttons = this.state.actions.map((option, key) => {
       return (
         <button type="button"
+                key={key}
                 onClick={this.vote.bind(this, option.name)}
                 className="btn btn-default btn-block">{option.displayName}</button>
       );

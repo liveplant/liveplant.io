@@ -9,9 +9,9 @@ class VoteCount extends React.Component {
   }
 
   render() {
-    var panels = this.state.actionCollection.map((action) => {
+    var panels = this.state.actionCollection.map((action, key) => {
       return (
-        <div className="col-sm-6">
+        <div className="col-sm-6" key={key}>
           <div className="panel panel-default">
             <div className="panel-heading">{action.displayName}</div>
             <div className="panel-body">
