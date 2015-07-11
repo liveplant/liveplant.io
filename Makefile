@@ -38,7 +38,7 @@ serve:
 	$(NPM_BIN)/browser-sync start --server dist --files "dist/css/*.css, dist/js/*.js, dist/*.html"
 
 watchify:
-	$(NPM_BIN)/watchify $(JS_INDEX) $(BIFY_ARGS) --outfile $(JS_TARGET) -v
+	$(NPM_BIN)/watchify $(JS_INDEX) -d $(BIFY_ARGS) --outfile $(JS_TARGET) -v
 
 watch-static-files:
 	$(NPM_BIN)/chokidar 'src/**.html' 'src/images/**' -c 'make static-files'
