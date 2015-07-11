@@ -27,9 +27,7 @@
     "watchify": "^3.2.3"
   },
   "dependencies": {
-    "backbone": "^1.2.1",
     "classnames": "^2.1.2",
-    "jquery": "^2.1.4",
     "lodash": "^3.9.3",
     "react": "^0.13.3"
   }
