@@ -21,6 +21,16 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+
+.twitch-link {
+  padding:2px 0px 4px; 
+  display:block; 
+  width:345px; 
+  font-weight:normal; 
+  font-size:10px;
+  text-decoration:underline;"
+}
+
         </style>
     </head>
     <body>
@@ -33,27 +43,7 @@
           </div>
         </div>
       </nav>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe src="http://www.twitch.tv/liveplantio/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe><a href="http://www.twitch.tv/liveplantio?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from liveplantio on www.twitch.tv</a>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <h1>Current Action</h1>
-            <span class="big-ass-text">Water</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div id="vote-buttons"></div>
-          </div>
-          <div class="col-sm-6">
-            <div id="vote-count"></div>
-          </div>
-        </div>
-      </div>
+      <div id="liveplant-app"></div>
       <script src="js/bundle.js"></script>
     </body>
 </html>

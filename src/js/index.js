@@ -1,9 +1,9 @@
-var $ = require('jquery');
-var _ = require('lodash');
+import _ from 'lodash';
 import Action from './models/Action';
 import React from 'react';
 import VoteButtons from './components/VoteButtons';
 import VoteCount from './components/VoteCount';
+import LivePlantApp from './components/LivePlantApp';
 
 class Liveplant {
   constructor(options) {
@@ -37,13 +37,7 @@ liveplant.actions = [
   {displayName: 'Water', name: 'water'}
 ];
 
-
 React.render(
-  <VoteButtons actionCollection={liveplant.actions} />,
-  document.getElementById('vote-buttons')
-);
-
-React.render(
-  <VoteCount actionCollection={liveplant.actions} />,
-  document.getElementById('vote-count')
+  <LivePlantApp app={liveplant} />,
+  document.getElementById('liveplant-app')
 );
