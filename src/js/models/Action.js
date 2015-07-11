@@ -1,7 +1,8 @@
-
-  constructor() {
+class Action {
+  constructor(options) {
     this.count = 0;
-    this.name = '';
+    this.name = options.name || '';
+    this.displayName = options.displayName || '';
   }
 }
 

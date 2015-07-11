@@ -1,15 +1,24 @@
 var React = require('react');
 
-var options = [
-  {displayName: 'Nothing', action: 'nothing'},
-  {displayName: 'Water', action: 'water'}
-];
-
 class VoteButtons extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      actions: props.actionCollection
+    };
+    this.vote.bind(this);
+  }
+
+  vote(action) {
+    console.log(action);
+  }
+
   render() {
-    var buttons = options.map(function (option) {
+    var buttons = this.state.actions.map((option) => {
       return (
         <button type="button"
+                onClick={this.vote.bind(this, option.name)}
                 className="btn btn-default btn-block">{option.displayName}</button>
       );
     });
