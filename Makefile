@@ -7,6 +7,9 @@ FETCH = whatwg-fetch
 JS_FETCH_SOURCE = $(NPM_ROOT)/$(FETCH)/$(shell npm view $(FETCH) main)
 JS_FETCH_TARGET = dist/js/fetch.js
 
+ES6_POLYFILL_SOURCE = src/js/es6-polyfill.js
+ES6_POLYFILL_TARGET = dist/js/es6-polyfill.js
+
 SCSS_SOURCE = $(shell find src/scss -name "*.scss")
 CSS_TARGET = dist/css/bundle.css
 HTML_SOURCE = $(shell find src/*.html)
@@ -17,10 +20,11 @@ NPM_BIN = $(shell npm bin)
 BIFY_ARGS = -t babelify
 dir_guard = @mkdir -p $(@D)
 uglify = $(NPM_BIN)/uglifyjs $< -o $@
+browserify = $(NPM_BIN)/browserify $< $(BIFY_ARGS) --outfile $@
 
 .PHONY: all clean serve watchify watch-static-files watch static-files
 
-all: node_modules static-files $(JS_TARGET) $(JS_FETCH_TARGET)
+all: node_modules static-files $(JS_TARGET) $(JS_FETCH_TARGET) $(ES6_POLYFILL_TARGET)
 
 static-files: $(HTML_TARGET) $(IMAGES_TARGET)
 
@@ -34,10 +38,15 @@ dist/%.html: src/%.html
 
 $(JS_TARGET): $(JS_INDEX) $(JS_SOURCE)
 	$(dir_guard)
-	$(NPM_BIN)/browserify $< $(BIFY_ARGS) --outfile $@
+	$(browserify)
 
 $(JS_FETCH_TARGET): $(JS_FETCH_SOURCE)
+	$(dir_guard)
 	$(uglify)
+
+$(ES6_POLYFILL_TARGET): $(ES6_POLYFILL_SOURCE)
+	$(dir_guard)
+	$(browserify)
 
 $(CSS_TARGET): src/scss/main.scss $(SCSS_SOURCE)
 	$(dir_guard)
