@@ -1,6 +1,12 @@
+NPM_ROOT = $(shell npm root)
 JS_SOURCES = $(shell find src/js -name "*.js")
 JS_INDEX = src/js/index.js
 JS_TARGET = dist/js/bundle.js
+
+FETCH = whatwg-fetch
+JS_FETCH_SOURCE = $(NPM_ROOT)/$(FETCH)/$(shell npm view $(FETCH) main)
+JS_FETCH_TARGET = dist/js/fetch.js
+
 SCSS_SOURCE = $(shell find src/scss -name "*.scss")
 CSS_TARGET = dist/css/bundle.css
 HTML_SOURCE = $(shell find src/*.html)
@@ -10,10 +16,11 @@ IMAGES_TARGET = $(IMAGES_SOURCE:src/images/%=dist/images/%)
 NPM_BIN = $(shell npm bin)
 BIFY_ARGS = -t babelify
 dir_guard = @mkdir -p $(@D)
+uglify = $(NPM_BIN)/uglifyjs $< -o $@
 
 .PHONY: all clean serve watchify watch-static-files watch static-files
 
-all: node_modules static-files $(JS_TARGET)
+all: node_modules static-files $(JS_TARGET) $(JS_FETCH_TARGET)
 
 static-files: $(HTML_TARGET) $(IMAGES_TARGET)
 
@@ -28,6 +35,9 @@ dist/%.html: src/%.html
 $(JS_TARGET): $(JS_INDEX) $(JS_SOURCE)
 	$(dir_guard)
 	$(NPM_BIN)/browserify $< $(BIFY_ARGS) --outfile $@
+
+$(JS_FETCH_TARGET): $(JS_FETCH_SOURCE)
+	$(uglify)
 
 $(CSS_TARGET): src/scss/main.scss $(SCSS_SOURCE)
 	$(dir_guard)
