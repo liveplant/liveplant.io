@@ -1,6 +1,6 @@
 import React from 'react';
 
-class VoteCount extends React.Component {
+export default class VoteCount extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,5 +31,3 @@ class VoteCount extends React.Component {
     )
   }
 }
-
-module.exports = VoteCount;
