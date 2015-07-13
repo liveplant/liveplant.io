@@ -31,10 +31,10 @@ export default class LivePlantApp extends React.Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            <VoteButtons actionCollection={this.props.app.actions} />,
+            <VoteButtons actionCollection={this.props.app.actions} />
           </div>
           <div className="col-sm-6">
-            <VoteCount actionCollection={this.props.app.actions} />,
+            <VoteCount actionCollection={this.props.app.actions} />
           </div>
         </div>
       </div>
