@@ -1,6 +1,6 @@
 import React from 'react';
 
-class VoteButtons extends React.Component {
+export default class VoteButtons extends React.Component {
 
   constructor(props) {
     super(props);
@@ -33,5 +33,3 @@ class VoteButtons extends React.Component {
     );
   }
 }
-
-module.exports = VoteButtons;
