@@ -27,7 +27,6 @@ class VoteStore {
   }
 
   incrementVote(action) {
-    console.log(action);
     var index = _.findIndex(this.votes, {name: action});
     this.votes[index].count += 1;
   }
