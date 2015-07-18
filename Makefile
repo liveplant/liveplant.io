@@ -24,7 +24,7 @@ browserify = $(NPM_BIN)/browserify $< $(BIFY_ARGS) --outfile $@
 
 .PHONY: all clean serve watchify watch-static-files watch static-files
 
-all: node_modules static-files $(JS_TARGET) $(JS_FETCH_TARGET) $(ES6_POLYFILL_TARGET)
+all: node_modules static-files $(JS_TARGET) $(JS_FETCH_TARGET) $(ES6_POLYFILL_TARGET) $(CSS_TARGET)
 
 static-files: $(HTML_TARGET) $(IMAGES_TARGET)
 
