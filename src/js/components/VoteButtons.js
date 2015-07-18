@@ -1,21 +1,14 @@
 import React from 'react';
+import VoteActions from '../actions/VoteActions';
 
 export default class VoteButtons extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      actions: props.actionCollection
-    };
-    this.vote.bind(this);
-  }
-
   vote(action) {
-    console.log(action);
+    VoteActions.incrementVote(action);
   }
 
   render() {
-    var buttons = this.state.actions.map((option, key) => {
+    var buttons = this.props.votes.map((option, key) => {
       return (
         <button type="button"
                 key={key}

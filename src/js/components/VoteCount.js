@@ -1,15 +1,13 @@
 import React from 'react';
+import VoteStore from '../stores/VoteStore';
+import VoteActions from '../actions/VoteActions';
 
 export default class VoteCount extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      actionCollection: props.actionCollection
-    };
-  }
 
   render() {
-    var panels = this.state.actionCollection.map((action, key) => {
+    console.log(this.state);
+    console.log(this.props);
+    var panels = this.props.votes.map((action, key) => {
       return (
         <div className="col-sm-6" key={key}>
           <div className="panel panel-default">

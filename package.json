@@ -28,6 +28,7 @@
     "watchify": "^3.2.3"
   },
   "dependencies": {
+    "alt": "^0.17.1",
     "classnames": "^2.1.2",
     "lodash": "^3.9.3",
     "react": "^0.13.3",

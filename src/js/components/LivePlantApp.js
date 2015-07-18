@@ -1,10 +1,12 @@
 import React from 'react';
 import VoteButtons from './VoteButtons';
 import VoteCount from './VoteCount';
+import VoteStore from '../stores/VoteStore';
+import AltContainer from 'alt/AltContainer';
 
 export default class LivePlantApp extends React.Component {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
+    VoteStore.fetchVotes();
   }
 
   render() {
@@ -31,10 +33,14 @@ export default class LivePlantApp extends React.Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            <VoteButtons actionCollection={this.props.app.actions} />
+            <AltContainer store={VoteStore}>
+              <VoteButtons />
+            </AltContainer>
           </div>
           <div className="col-sm-6">
-            <VoteCount actionCollection={this.props.app.actions} />
+            <AltContainer store={VoteStore}>
+              <VoteCount />
+            </AltContainer>
           </div>
         </div>
       </div>
