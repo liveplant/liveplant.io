@@ -1,5 +1,5 @@
 import alt from '../alt';
-import vote from '../utils/vote';
+import liveplantAPI from '../utils/liveplantAPI';
 
 class VoteActions {
   updateVotes(choice, target) {
@@ -7,7 +7,7 @@ class VoteActions {
   }
 
   incrementVote(action) {
-    vote(action).then((data) => {
+    liveplantAPI.sendVote(action).then((data) => {
       this.dispatch(action);
     });
   }

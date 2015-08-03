@@ -1,6 +1,6 @@
 import alt from '../alt';
 import VoteActions from '../actions/VoteActions';
-import VoteSource from '../sources/LocationActions';
+import VotesSource from '../sources/VotesSource';
 import _ from 'lodash';
 
 class VoteStore {
@@ -15,7 +15,7 @@ class VoteStore {
       incrementVote: VoteActions.INCREMENT_VOTE
     });
 
-    this.exportAsync(VoteSource);
+    this.exportAsync(VotesSource);
   }
 
   handleUpdateVotes(choice) {
@@ -23,12 +23,11 @@ class VoteStore {
   }
 
   handleFetchVotes() {
-    this.votes = [];
   }
 
   incrementVote(action) {
     var index = _.findIndex(this.votes, {name: action});
-    this.votes[index].count += 1;
+    this.votes[index].voteCount += 1;
   }
 
   handleFetchVotesFailed(errorMessage) {

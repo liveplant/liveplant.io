@@ -6,13 +6,13 @@ export default class VoteCount extends React.Component {
 
   render() {
     var totalCount = this.props.votes.reduce((total, vote) => {
-      return total += vote.count;
+      return total += vote.voteCount;
     }, 0);
     var bars = this.props.votes.map((action, key) => {
       var width = 0;
-      var displayCount = action.count > 0 ? action.count : null;
+      var displayCount = action.voteCount > 0 ? action.voteCount : null;
       if (totalCount > 0) {
-        width = action.count / totalCount;
+        width = action.voteCount / totalCount;
       }
       width *= 100;
       var style = {

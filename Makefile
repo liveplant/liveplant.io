@@ -17,10 +17,9 @@ HTML_TARGET = $(HTML_SOURCE:src/%=dist/%)
 IMAGES_SOURCE = $(shell find src/images)
 IMAGES_TARGET = $(IMAGES_SOURCE:src/images/%=dist/images/%)
 NPM_BIN = $(shell npm bin)
-BIFY_ARGS = -t babelify
 dir_guard = @mkdir -p $(@D)
 uglify = $(NPM_BIN)/uglifyjs $< -o $@
-browserify = $(NPM_BIN)/browserify $< $(BIFY_ARGS) --outfile $@
+browserify = $(NPM_BIN)/browserify $< --outfile $@
 
 .PHONY: all clean serve watchify watch-static-files watch static-files
 
@@ -57,7 +56,7 @@ serve:
 	$(NPM_BIN)/browser-sync start --server dist --files "dist/css/*.css, dist/js/*.js, dist/*.html"
 
 watchify:
-	$(NPM_BIN)/watchify $(JS_INDEX) -d $(BIFY_ARGS) --outfile $(JS_TARGET) -v
+	$(NPM_BIN)/watchify $(JS_INDEX) -d --outfile $(JS_TARGET) -v
 
 watch-static-files:
 	$(NPM_BIN)/chokidar 'src/**.html' 'src/images/**' -c 'make static-files'

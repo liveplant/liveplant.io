@@ -7,6 +7,7 @@ import AltContainer from 'alt/AltContainer';
 export default class LivePlantApp extends React.Component {
   componentDidMount() {
     VoteStore.fetchVotes();
+    window.setInterval(VoteStore.fetchVotes, 1000);
   }
 
   render() {
