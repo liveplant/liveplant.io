@@ -3,6 +3,7 @@ import Action from './models/Action';
 import React from 'react';
 import VoteButtons from './components/VoteButtons';
 import VoteCount from './components/VoteCount';
+import CurrentAction from './components/CurrentAction';
 import LivePlantApp from './components/LivePlantApp';
 
 class Liveplant {
@@ -31,11 +32,6 @@ class Liveplant {
 }
 
 var liveplant = Liveplant.init();
-
-liveplant.actions = [
-  {displayName: 'Nothing', name: 'nothing'},
-  {displayName: 'Water', name: 'water'}
-];
 
 React.render(
   <LivePlantApp app={liveplant} />,

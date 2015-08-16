@@ -20,6 +20,18 @@ class VoteActions {
   fetchVotesFailed(errorMessage) {
     this.dispatch(errorMessage);
   }
+
+  fetchCurrentAction() {
+    this.dispatch();
+  }
+
+  updateCurrentAction(action) {
+    this.dispatch(action);
+  }
+
+  fetchCurrentActionFailed(errorMessage) {
+    this.dispatch(errorMessage);
+  }
 }
 
 export default alt.createActions(VoteActions);
