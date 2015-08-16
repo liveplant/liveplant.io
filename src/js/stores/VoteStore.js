@@ -7,12 +7,16 @@ class VoteStore {
   constructor() {
     this.votes = [];
     this.errorMessage = null;
+    this.currentAction = {};
 
     this.bindListeners({
       handleUpdateVotes: VoteActions.UPDATE_VOTES,
       handleFetchVotes: VoteActions.FETCH_VOTES,
       handleFetchVotesFailed: VoteActions.FETCH_VOTES_FAILED,
-      incrementVote: VoteActions.INCREMENT_VOTE
+      incrementVote: VoteActions.INCREMENT_VOTE,
+      handleFetchCurrentAction: VoteActions.FETCH_CURRENT_ACTION,
+      handleUpdateCurrentAction: VoteActions.UPDATE_CURRENT_ACTION,
+      handleFetchCurrentActionFailed: VoteActions.FETCH_CURRENT_ACTION_FAILED
     });
 
     this.exportAsync(VotesSource);
@@ -31,6 +35,18 @@ class VoteStore {
   }
 
   handleFetchVotesFailed(errorMessage) {
+    this.errorMessage = errorMessage;
+  }
+
+  handleFetchCurrentAction() {
+
+  }
+
+  handleUpdateCurrentAction(action) {
+    this.currentAction = action;
+  }
+
+  handleFetchCurrentActionFailed(errorMessage) {
     this.errorMessage = errorMessage;
   }
 }

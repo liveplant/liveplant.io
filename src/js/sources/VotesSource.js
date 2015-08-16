@@ -19,5 +19,23 @@ export default {
       error: VoteActions.fetchVotesFailed,
       loading: VoteActions.fetchVotes
     }
+  },
+
+  fetchCurrentAction() {
+    return {
+      remote() {
+        return api.getCurrentAction().then(function(data) {
+          return data.action || {};
+        });
+      },
+
+      local() {
+        return null;
+      },
+
+      success: VoteActions.updateCurrentAction,
+      error: VoteActions.fetchCurrentActionFailed,
+      loading: VoteActions.fetchCurrentAction
+    }
   }
 };

@@ -11,7 +11,8 @@ class LiveplantAPI {
       'Content-Type': 'application/json'
     }
     this.endpoints = _.transform({
-      votes: '/votes'
+      votes: '/votes',
+      currentAction: '/current_action'
     }, (result, endpoint, key) => {
       result[key] = this.entry + endpoint
     });
@@ -33,6 +34,10 @@ class LiveplantAPI {
 
   getVotes() {
     return this.request('votes');
+  }
+
+  getCurrentAction() {
+    return this.request('currentAction');
   }
 }
 

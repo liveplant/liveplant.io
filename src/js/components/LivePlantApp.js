@@ -3,11 +3,14 @@ import VoteButtons from './VoteButtons';
 import VoteCount from './VoteCount';
 import VoteStore from '../stores/VoteStore';
 import AltContainer from 'alt/AltContainer';
+import CurrentAction from './CurrentAction';
 
 export default class LivePlantApp extends React.Component {
   componentDidMount() {
     VoteStore.fetchVotes();
+    VoteStore.fetchCurrentAction();
     window.setInterval(VoteStore.fetchVotes, 1000);
+    window.setInterval(VoteStore.fetchCurrentAction, 1000);
   }
 
   render() {
@@ -28,8 +31,9 @@ export default class LivePlantApp extends React.Component {
             </div>
           </div>
           <div className="col-sm-6">
-            <h1>Current Action</h1>
-            <span className="big-ass-text">Water</span>
+            <AltContainer store={VoteStore}>
+              <CurrentAction />
+            </AltContainer>
           </div>
         </div>
         <div className="row">
