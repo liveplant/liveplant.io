@@ -6,6 +6,8 @@ import VoteCount from './components/VoteCount';
 import CurrentAction from './components/CurrentAction';
 import LivePlantApp from './components/LivePlantApp';
 
+import '../scss/main.scss';
+
 class Liveplant {
   constructor(options) {
     this.currentAction;
@@ -35,5 +37,5 @@ var liveplant = Liveplant.init();
 
 React.render(
   <LivePlantApp app={liveplant} />,
-  document.getElementById('liveplant-app')
+  document.body
 );

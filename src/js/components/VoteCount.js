@@ -20,7 +20,11 @@ export default class VoteCount extends React.Component {
       };
       return (
         <div className="row" key={action.name}>
-          <div className="col-sm-3">{action.displayName}</div>
+          <div className="col-sm-3">
+            <strong>
+              {action.displayName}
+            </strong>
+          </div>
           <div className="col-sm-9">
             <div className="progress">
               <div className="progress-bar"
