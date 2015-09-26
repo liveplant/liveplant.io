@@ -17,6 +17,11 @@ export default class LivePlantApp extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row">
+          <div className="col-sm-12 img-responsive logo">
+            <img src="http://i60.tinypic.com/2drruy0.jpg" alt="temp logo" />
+          </div>
+        </div>
+        <div className="row">
           <div className="col-sm-6">
             <div className="embed-responsive embed-responsive-16by9">
               <iframe src="http://www.twitch.tv/liveplantio/embed"
