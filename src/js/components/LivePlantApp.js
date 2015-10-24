@@ -4,6 +4,7 @@ import VoteCount from './VoteCount';
 import VoteStore from '../stores/VoteStore';
 import AltContainer from 'alt/AltContainer';
 import CurrentAction from './CurrentAction';
+import CountdownTimer from './CountdownTimer.js';
 
 export default class LivePlantApp extends React.Component {
   componentDidMount() {
@@ -32,7 +33,13 @@ export default class LivePlantApp extends React.Component {
           </div>
           <div className="col-sm-6">
             <AltContainer store={VoteStore}>
-              <CurrentAction />
+              <CountdownTimer timerLabel="Time Remaining"
+                              timeRemainingProp="votingTimeRemaining"
+                              normalClass="normal-timer"
+                              alertClass="alert-timer" />
+            </AltContainer>
+            <AltContainer store={VoteStore}>
+              <CurrentAction  />
             </AltContainer>
           </div>
         </div>

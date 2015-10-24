@@ -4,7 +4,7 @@ import VoteActions from '../actions/VoteActions';
 
 export default class CurrentAction extends React.Component {
     render() {
-      var currentAction = this.props.currentAction;
+      var currentAction = this.props.currentAction.action;
       return (
         <div>
           <h1>Current Action</h1>

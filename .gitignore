@@ -30,3 +30,6 @@ dist/
 # OS generated files
 .DS_Store
 .vagrant/
+
+# For people using intellij
+.idea/
