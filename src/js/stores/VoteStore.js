@@ -44,6 +44,7 @@ class VoteStore {
 
   handleUpdateCurrentAction(action) {
     this.currentAction = action;
+    this.votingTimeRemaining = action.votingTimeRemaining;
   }
 
   handleFetchCurrentActionFailed(errorMessage) {

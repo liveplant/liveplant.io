@@ -25,7 +25,7 @@ export default {
     return {
       remote() {
         return api.getCurrentAction().then(function(data) {
-          return data.action || {};
+          return data || {};
         });
       },
 
