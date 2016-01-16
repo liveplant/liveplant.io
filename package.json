@@ -5,7 +5,8 @@
   "main": "src/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node dev-server.js"
+    "dev": "node dev-server.js",
+    "dev:prodapi": "NODE_ENV=production node dev-server.js"
   },
   "repository": {
     "type": "git",
